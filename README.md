@@ -7,3 +7,4 @@ there is a lot more overhead per connection (make a graph)
 - investigate cpu usage
 - implement sockets.io
 - implement vue-native-websockets
+- microsoft edge is really slow? like 16-17 seconds compared to 0.5-1 second in chrome/firefox
