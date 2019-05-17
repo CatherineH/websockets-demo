@@ -47,4 +47,5 @@ var app = new Vue({
               });
         }
     }
+
 });

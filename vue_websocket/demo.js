@@ -9,7 +9,8 @@ var app = new Vue({
         total_width: total_width * 2 + "px",
         total_height: total_width + "px",
         blocks: locations,
-        times: {starts:[0, 0], ends:[0, 0]}
+        times: {starts:[0, 0], ends:[0, 0]},
+        test: 0
     },
     mounted: function () {
         var app_handle = this;
