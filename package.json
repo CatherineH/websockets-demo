@@ -1,0 +1,31 @@
+{
+  "name": "websockets-demo-master",
+  "version": "1.0.0",
+  "description": "some experiments with vue and websockets",
+  "main": "colors.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CatherineH/websockets-demo.git"
+  },
+  "keywords": [
+    "websockets",
+    "vue"
+  ],
+  "author": "Catherine Holloway",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CatherineH/websockets-demo/issues"
+  },
+  "homepage": "https://github.com/CatherineH/websockets-demo#readme",
+  "dependencies": {
+    "express": "^4.17.0",
+    "socket.io": "^2.2.0",
+    "systeminformation": "^4.5.1",
+    "vue-native-websocket": "^2.0.13",
+    "vue-websocket": "^0.2.3",
+    "ws": "^7.0.0"
+  }
+}
