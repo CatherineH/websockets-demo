@@ -1,10 +1,14 @@
+import VuePlotly from '@statnett/vue-plotly'
+
+
 var app = new Vue({
+    components: VuePlotly,
     el: '#app',
+    websocket_plot: {x: this.times.websockets, type: 'histogram'},
     data: {
         times: {websockets: [], http: []},
         test: 0,
         num_tests: 50
-
     },
     methods:{
         getWebsocket: function(){

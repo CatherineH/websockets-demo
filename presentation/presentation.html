@@ -1,0 +1,143 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/css/reveal.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/css/theme/white.css">
+        <link rel="stylesheet" href="presentation.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vue-resource@1.5.1"></script>
+        <script src="../initialize_grid.js"></script>
+    </head>
+    <body>
+        <div id="hidden" style="display:none;">
+            <div id="header">
+                <div id="footer-left">github.com/CatherineH/websockets-demo</div>
+            </div>
+        </div>
+
+        <div class="reveal">
+            <div class="slides">
+                <section>
+                    <h1>Websockets for Non-netflix devs</h1>
+                    <h2>Catherine Holloway</h2>
+                </section>
+                <section>
+                    <img src="road_trip.jpg" />
+                </section>
+                <section>
+                    <img src="mile_marker.jpg" />
+                </section>
+                <section>
+                    <p>Netflix - Zuul</p>
+                    <a href="https://www.youtube.com/watch?v=6w6E_B55p0E">https://www.youtube.com/watch?v=6w6E_B55p0E</a>
+                </section>
+                <section><img src="a_part_of_our_heritage_oddpost.jpg" /></section>
+                <section align="left">
+                    <p><b>1996</b> iframes</p>
+                    <p><b>1999</b> IXMLHTTPRequest via ActiveX</p>
+                    <p><b>1999</b> http 1.1 - transfer chunked</p>
+                    <p><b>2002</b> Oddpost</p>
+                    <p><b>2004</b> Gmail</p>
+                </section>
+                <section align="left">
+
+                    <p><b>2005</b> AJAX</p>
+                    <p><b>2006</b> Comet (long-polling http)</p>
+                    <p><b>2011</b> WebSocket standardized</p>
+                </section>
+                <section>
+                    <p>github.com/kkuchta/css-only-chat</p>
+                    <img src="css_only_chat.gif" />
+                </section>
+                <section>
+                    <p>3 Ways to use Websockets + Vue</p>
+                </section>
+                <section id="directly">
+                <h3>Directly</h3>
+                    <pre><code data-trim data-noescape>
+mounted: function () {
+    var app_handle = this;
+    const socket = new WebSocket('ws://localhost:8080');
+
+    // Connection opened
+    socket.addEventListener('open', function (event) {
+        socket.send('Hello Server!');
+    });
+    // Listen for messages
+    socket.addEventListener('message', function (event) {
+        app_handle.data = event.data;
+    });
+	</code></pre>
+                </section>
+                <section>
+                <h3>vue-native-websockets</h3>
+                    <pre><code data-trim data-noescape>
+import VueNativeSock from 'vue-native-websocket'
+Vue.use(VueNativeSock, 'ws://localhost:8080')
+var vm = new Vue({
+mounted: function () {
+    var app_handle = this;
+
+    // Connection opened
+    this.$socket.addEventListener('open', function (event) {
+        socket.send('Hello Server!');
+    });
+    // Listen for messages
+    this.$socket.addEventListener('message', function (event) {
+        app_handle.data = event.data;
+    });
+})
+	</code></pre>
+                </section>
+                <section>
+                                <h3>vue-native-websockets vuex</h3>
+                    <pre><code data-trim data-noescape>
+Vue.use(VueNativeSock, 'ws://localhost:9090', {
+  passToStoreHandler: function (eventName, event, next) {
+    event.data = event.should_have_been_named_data
+    next(eventName, event)
+  }
+})
+	</code></pre>
+                </section>
+                <section><h3>vue + socket.io</h3>
+                    <p>Vue-Socket.io - 3380</p>
+                    <p>vue-websocket - 436</p>
+                </section>
+                <section><h2>What to expect when you're expecting a TCP packet</h2></section>
+                <section>
+                    <p>WebSocket - bidirectional TCP</p>
+                    <p>EventSource - persistent HTTP with text/event-stream</p>
+                </section>
+                <section id="app">
+                    <div style="width: 50%;float: left">
+                        <p>WebSockets</p>
+                    </div>
+                    <div style="margin-left: 50%">
+                        <p>HTTP</p>
+                    </div>
+                    <svg  v-bind:height="total_height" v-bind:width="total_width">
+                        <rect v-for="block in blocks[0]" v-bind:fill="block.fill" fill-opacity="0.5" height="20"
+                              stroke-width="0" v-bind:width="block_size" v-bind:x="block.x" v-bind:y="block.y"/>
+                        <rect v-for="block in blocks[1]" v-bind:fill="block.fill" fill-opacity="0.5" height="20"
+                              stroke-width="0" v-bind:width="block_size" v-bind:x="block.x" v-bind:y="block.y"/>
+                    </svg>
+                    <script src="../1_frames_demo/demo.js"></script>
+                </section>
+                <section>
+                    <img src="out_of_order.jpg" />
+                </section>
+                <section>
+                    Resource requirements
+                </section>
+                <section>
+                    Microsoft Edge wut
+                </section>
+                <section>
+                    Be Progressive!
+                </section>
+                <script src="dist/bundle.js"></script>
+            </div>
+        </div>
+    </body>
+</html>

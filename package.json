@@ -21,7 +21,9 @@
   },
   "homepage": "https://github.com/CatherineH/websockets-demo#readme",
   "dependencies": {
+    "@statnett/vue-plotly": "^0.3.2",
     "express": "^4.17.0",
+    "plotly.js": "^1.47.4",
     "socket.io": "^2.2.0",
     "systeminformation": "^4.5.1",
     "vue-native-websocket": "^2.0.13",

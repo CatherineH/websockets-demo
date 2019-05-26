@@ -12,7 +12,9 @@
 <body>
 <div id="app">
 <section>
-<div style="width: 50%;float: left">
+
+<div style="width: 50%;float: left" id="websocket_plot">
+    <vue-plotly :data="data" :layout="layout" :options="options"/>
 <p> Deltas: {{ times.websockets }}</p>
 <p> Number tests: {{times.websockets.length }}</p>
 </div>
@@ -22,7 +24,7 @@
 
 </div>
 </section>
-<script src="demo.js"></script>
+<script src="dist/demo.js"></script>
 </div>
 </body>
 </html>
