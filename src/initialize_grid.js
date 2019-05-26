@@ -39,3 +39,6 @@ for (var i = 0; i < colors.length; i++) {
     }
     current_column = next_pixel
 }
+if(typeof module !== 'undefined'){
+    module.exports = {'locations': locations, 'total_width': total_width, 'block_size': block_size, 'num_blocks': num_blocks};
+}

@@ -1,11 +1,19 @@
-var app = new Vue({
-    el: '#app',
+import Vue from 'vue';
+import VueResource from 'vue-resource';
+import VueNativeSock from 'vue-native-websocket';
+Vue.use(VueResource);
+
+var grid = require('../../src/initialize_grid.js');
+
+
+new Vue({
+    //el: '#app',
     data: {
-        num_blocks: num_blocks,
-        block_size: block_size,
-        total_width: total_width * 2 + "px",
-        total_height: total_width + "px",
-        blocks: locations
+        num_blocks: grid.num_blocks,
+        block_size: grid.block_size,
+        total_width: grid.total_width * 2 + "px",
+        total_height: grid.total_width + "px",
+        blocks: grid.locations
     },
     mounted: function () {
         var app_handle = this;
@@ -37,5 +45,6 @@ var app = new Vue({
               });
         }
     }
-});
+}).$mount('#app');
+
 

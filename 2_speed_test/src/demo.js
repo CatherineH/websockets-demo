@@ -1,4 +1,5 @@
-import VuePlotly from '@statnett/vue-plotly'
+import Vue from 'vue';
+import VuePlotly from '@statnett/vue-plotly';
 
 
 var app = new Vue({

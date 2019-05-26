@@ -1,3 +1,4 @@
+var app = require('../../1_frames_demo/src/demo.js');
 var Reveal = require('reveal.js');
 var $ = require('jQuery');
 

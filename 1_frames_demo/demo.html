@@ -3,19 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <title>Vue Demo</title>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vue-resource@1.5.1"></script>
-    <script src="../initialize_grid.js"></script>
-
+    <link href="dist/bundle.js" rel="preload" as="script" />
 </head>
 <body>
-<div id="app">
-<svg  v-bind:height="total_height" v-bind:width="total_width">
-    <rect v-for="block in blocks[0]" v-bind:fill="block.fill" fill-opacity="0.5" height="20" stroke-width="0" v-bind:width="block_size" v-bind:x="block.x" v-bind:y="block.y"/>
-    <rect v-for="block in blocks[1]" v-bind:fill="block.fill" fill-opacity="0.5" height="20" stroke-width="0" v-bind:width="block_size" v-bind:x="block.x" v-bind:y="block.y"/>
-</svg>
-<script src="demo.js"></script>
-</div>
+    <div id="app">
+        <svg  v-bind:height="total_height" v-bind:width="total_width">
+            <rect v-for="block in blocks[0]" v-bind:fill="block.fill" fill-opacity="0.5" height="20" stroke-width="0"
+                  v-bind:width="block_size" v-bind:x="block.x" v-bind:y="block.y"/>
+            <rect v-for="block in blocks[1]" v-bind:fill="block.fill" fill-opacity="0.5" height="20" stroke-width="0"
+                  v-bind:width="block_size" v-bind:x="block.x" v-bind:y="block.y"/>
+        </svg>
+    </div>
+    <script src="dist/bundle.js"></script>
 </body>
 </html>

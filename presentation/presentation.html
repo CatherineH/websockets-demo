@@ -1,12 +1,9 @@
 <html>
     <head>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/css/reveal.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/css/theme/white.css">
+        <link rel="stylesheet" href="dist/css/reveal.css">
+        <link rel="stylesheet" href="dist/css/white.css">
         <link rel="stylesheet" href="presentation.css">
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/vue-resource@1.5.1"></script>
-        <script src="../initialize_grid.js"></script>
+        <script src="../src/initialize_grid.js"></script>
     </head>
     <body>
         <div id="hidden" style="display:none;">
@@ -122,7 +119,7 @@ Vue.use(VueNativeSock, 'ws://localhost:9090', {
                         <rect v-for="block in blocks[1]" v-bind:fill="block.fill" fill-opacity="0.5" height="20"
                               stroke-width="0" v-bind:width="block_size" v-bind:x="block.x" v-bind:y="block.y"/>
                     </svg>
-                    <script src="../1_frames_demo/demo.js"></script>
+                    <!--<script src="../1_frames_demo/src/src.js"></script>-->
                 </section>
                 <section>
                     <img src="out_of_order.jpg" />
