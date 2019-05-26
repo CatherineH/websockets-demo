@@ -1,11 +1,11 @@
-import Vue from 'vue';
-import VuePlotly from '@statnett/vue-plotly';
 
+/*import Vue from 'vue';
+import VuePlotly from '@statnett/vue-plotly';
+import VueResource from 'vue-resource';*/
+Vue.use(VueResource);
 
 var app = new Vue({
-    components: VuePlotly,
     el: '#app',
-    websocket_plot: {x: this.times.websockets, type: 'histogram'},
     data: {
         times: {websockets: [], http: []},
         test: 0,
@@ -26,8 +26,8 @@ var app = new Vue({
                 if(event.data == 'end')
                 {
                     app_handle.times.websockets.push(new Date().getTime() - start_time);
-
                     if (app_handle.times.websockets.length > app_handle.num_tests) {
+                        app_handle.updatePlot();
                         app_handle.getHttp();
                     } else {
                         app_handle.getWebsocket();
@@ -48,12 +48,41 @@ var app = new Vue({
                     if (app_handle.times.http.length < app_handle.num_tests && blocks_set == 400) {
                         app_handle.times.http.push(new Date().getTime() - start_time);
                         app_handle.getHttp();
+                    } else if(blocks_set == 400){
+                        this.updatePlot();
                     }
 
                   }, response => {
                     // error callback
                 });
             }
+        },
+        updatePlot: function(){
+            var trace1 = {
+              x: this.times.websockets,
+              type: "histogram",
+              name: 'websockets return time',
+              opacity: 0.5,
+              marker: {
+                 color: 'green',
+              },
+            };
+            var trace2 = {
+              x: this.times.http,
+              type: "histogram",
+              name: 'HTTP return time',
+              opacity: 0.6,
+              marker: {
+                 color: 'red',
+              },
+            };
+
+            var data = [trace1, trace2];
+            var layout = {barmode: "overlay",
+                xaxis: {title: "return time (ms)"},
+                yaxis: {title: "Count"}
+            };
+            Plotly.newPlot("times-plot", data, layout);
         }
     },
     mounted: function () {

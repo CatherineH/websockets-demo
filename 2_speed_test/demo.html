@@ -10,14 +10,11 @@
 <section>
 
 <div style="width: 50%;float: left" id="websocket_plot">
-    <vue-plotly :data="data" :layout="layout" :options="options"/>
-<p> Deltas: {{ times.websockets }}</p>
+    <div id="times-plot" style="width:600px;height:250px;"></div>
+<p> Websockets Deltas: {{ times.websockets }}</p>
 <p> Number tests: {{times.websockets.length }}</p>
-</div>
-    <div style="margin-left: 50%">
-<p> Deltas: {{ times.http }}</p>
+<p> HTTP Deltas: {{ times.http }}</p>
 <p> Number tests: {{times.http.length }}</p>
-
 </div>
 </section>
 <script src="dist/bundle.js"></script>

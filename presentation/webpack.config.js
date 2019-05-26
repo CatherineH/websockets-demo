@@ -13,6 +13,7 @@ module.exports = {
       // styles for slides export to to pdf
       { from: { glob: '../node_modules/reveal.js/css/reveal.css' }, to: 'css/[name].css' },
       { from: { glob: '../node_modules/reveal.js/css/theme/white.css' }, to: 'css/[name].css' },
+      { from: { glob: '../node_modules/reveal.js/plugin/highlight/highlight.js' }, to: 'highlight.js' },
     ])
   ],
   resolve: {

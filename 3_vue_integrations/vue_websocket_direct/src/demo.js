@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import VueResource from 'vue-resource';
 import VueNativeSock from 'vue-native-websocket';
-var grid = require('../../src/initialize_grid.js');
+var grid = require('../../../src/initialize_grid.js');
 
 Vue.use(VueNativeSock, 'ws://localhost:8080');
 Vue.use(VueResource);
