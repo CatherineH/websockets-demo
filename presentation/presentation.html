@@ -102,10 +102,6 @@ Vue.use(VueNativeSock, 'ws://localhost:9090', {
                     <p>vue-websocket - 436</p>
                 </section>
                 <section><h2>What to expect when you're expecting a TCP packet</h2></section>
-                <section>
-                    <p>WebSocket - bidirectional TCP</p>
-                    <p>EventSource - persistent HTTP with text/event-stream</p>
-                </section>
                 <section id="app">
                     <div style="width: 50%;float: left">
                         <p>WebSockets</p>
@@ -119,16 +115,23 @@ Vue.use(VueNativeSock, 'ws://localhost:9090', {
                         <rect v-for="block in blocks[1]" v-bind:fill="block.fill" fill-opacity="0.5" height="20"
                               stroke-width="0" v-bind:width="block_size" v-bind:x="block.x" v-bind:y="block.y"/>
                     </svg>
-                    <!--<script src="../1_frames_demo/src/src.js"></script>-->
                 </section>
                 <section>
                     <img src="out_of_order.jpg" />
                 </section>
                 <section>
-                    Resource requirements
+                    <img src="chrome_return_times.png"/>
                 </section>
                 <section>
                     Microsoft Edge wut
+                    <img src="edge_return_times.jpg"/>
+                </section>
+                <section>
+                    Resource requirements
+                </section>
+                <section>
+                    <p>WebSocket - bidirectional TCP</p>
+                    <p>EventSource - persistent HTTP with text/event-stream</p>
                 </section>
                 <section>
                     Be Progressive!
