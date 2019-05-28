@@ -3,6 +3,7 @@
         <link rel="stylesheet" href="dist/css/reveal.css">
         <link rel="stylesheet" href="dist/css/white.css">
         <link rel="stylesheet" href="presentation.css">
+        <link rel="stylesheet" href="dist/css/highlight.css">
         <script src="../src/initialize_grid.js"></script>
     </head>
     <body>
@@ -57,7 +58,7 @@
                 </section>
                 <section id="directly">
                 <h3>Directly</h3>
-                    <pre><code data-trim data-noescape>
+                    <pre><code class="hljs javascript">
 mounted: function () {
     var app_handle = this;
     const socket = new WebSocket('ws://localhost:8080');
@@ -74,18 +75,15 @@ mounted: function () {
                 </section>
                 <section>
                 <h3>vue-native-websockets</h3>
-                    <pre><code data-trim data-noescape>
+                    <pre><code data-trim data-noescape class="hljs javascript">
 import VueNativeSock from 'vue-native-websocket'
 Vue.use(VueNativeSock, 'ws://localhost:8080')
 var vm = new Vue({
 mounted: function () {
     var app_handle = this;
-
-    // Connection opened
     this.$socket.addEventListener('open', function (event) {
         socket.send('Hello Server!');
     });
-    // Listen for messages
     this.$socket.addEventListener('message', function (event) {
         app_handle.data = event.data;
     });
@@ -93,8 +91,8 @@ mounted: function () {
 	</code></pre>
                 </section>
                 <section>
-                                <h3>vue-native-websockets vuex</h3>
-                    <pre><code data-trim data-noescape>
+                    <h3>vue-native-websockets vuex</h3>
+                    <pre><code data-trim data-noescape class="hljs javascript">
 Vue.use(VueNativeSock, 'ws://localhost:9090', {
   passToStoreHandler: function (eventName, event, next) {
     event.data = event.should_have_been_named_data

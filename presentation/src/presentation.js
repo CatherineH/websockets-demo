@@ -11,17 +11,7 @@ Reveal.initialize({
                 ]*/
             });
 
-
-export default class CodePost extends Component {
-  componentDidMount() {
-    document.querySelectorAll('code').forEach((block) => {
-      hljs.highlightBlock(block);
-    });
-  }
-
-  // ...
-}
-
+hljs.initHighlightingOnLoad();
 var header = $('#header').html();
 if ( window.location.search.match( /print-pdf/gi ) ) {
     $('.slides > section').prepend(header);

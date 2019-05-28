@@ -24,6 +24,7 @@
     "@statnett/vue-plotly": "^0.3.2",
     "copy-webpack-plugin": "^5.0.3",
     "express": "^4.17.0",
+    "highlight.js": "^9.15.6",
     "jquery": "^3.4.1",
     "node-gyp": "^4.0.0",
     "plotly.js": "^1.47.4",
