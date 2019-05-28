@@ -1,7 +1,6 @@
-
-/*import Vue from 'vue';
-import VuePlotly from '@statnett/vue-plotly';
-import VueResource from 'vue-resource';*/
+import Vue from 'vue';
+import Plotly from 'plotly.js';
+import VueResource from 'vue-resource';
 Vue.use(VueResource);
 
 new Vue({

@@ -1,7 +1,7 @@
 
-/*import Vue from 'vue';
-import VuePlotly from '@statnett/vue-plotly';
-import VueResource from 'vue-resource';*/
+import Vue from 'vue';
+import Plotly from 'plotly.js';
+import VueResource from 'vue-resource';
 Vue.use(VueResource);
 
 var app = new Vue({
@@ -64,7 +64,7 @@ var app = new Vue({
               name: 'websockets return time',
               opacity: 0.5,
               marker: {
-                 color: 'green',
+                 color: 'red',
               },
             };
             var trace2 = {
@@ -73,7 +73,7 @@ var app = new Vue({
               name: 'HTTP return time',
               opacity: 0.6,
               marker: {
-                 color: 'red',
+                 color: 'green',
               },
             };
 
