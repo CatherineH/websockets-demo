@@ -1,9 +1,7 @@
 import Vue from 'vue';
 import VueResource from 'vue-resource';
-import VueNativeSock from 'vue-native-websocket';
 var grid = require('../../../src/initialize_grid.js');
 
-Vue.use(VueNativeSock, 'ws://localhost:8080');
 Vue.use(VueResource);
 console.log('grid: ', grid.locations);
 
@@ -19,9 +17,9 @@ var app = new Vue({
     },
     mounted: function () {
         var app_handle = this;
-        var port = '8765';
+        var socket = new WebSocket('ws://localhost:8080');
         var current_block = 0;
-        this.$socket.addEventListener('message', function (event) {
+        socket.addEventListener('message', function (event) {
             app_handle.blocks[0][current_block].fill = event.data;
             current_block += 1;
             if (current_block >= app_handle.blocks[0].length) {
