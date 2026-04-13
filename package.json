@@ -30,7 +30,7 @@
     "socket.io": "^2.5.1",
     "systeminformation": "^5.31.0",
     "vue": "^3.0.0",
-    "vue-resource": "^1.5.1",
+    "vue-resource": "^1.5.3",
     "webpack": "^5.106.1",
     "webpack-cli": "^7.0.2",
     "ws": "^7.5.10"
